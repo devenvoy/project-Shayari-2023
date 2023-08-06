@@ -5,6 +5,7 @@ import static com.example.shayari2023.Categories.shayaries;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -32,9 +33,17 @@ public class CatItems extends AppCompatActivity {
         Catitemtxt.setText(catarray[cposition]);
 
         CustomCatAdapter2 adapter = new CustomCatAdapter2(this, R.layout.catshayari, shayaries[cposition]);
+
         listView.setAdapter(adapter);
+
+
+        Intent i3 = new Intent(CatItems.this,ViewShayari.class);
         
         listView.setOnItemClickListener((parent, view, position, id) -> {
+
+            i3.putExtra("cposition",cposition);
+            i3.putExtra("itemloc",position);
+            startActivity(i3);
 
         });
 

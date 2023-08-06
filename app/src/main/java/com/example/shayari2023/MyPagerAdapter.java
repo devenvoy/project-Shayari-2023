@@ -52,6 +52,7 @@ public class MyPagerAdapter extends PagerAdapter {
         shayariimg.setBackgroundResource(CatColArr[position]);
         shayri.setText(catlist[position]);
 
+        // Its main thing that set our current item
         container.addView(view);
 
         return view;

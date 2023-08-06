@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CatItems">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#74A4FD">
+
+        <ImageView
+            android:id="@+id/backbtns"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:src="@drawable/arrow_left" />
+
+        <TextView
+            android:id="@+id/Catitemtxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/artifexcf_book"
+            android:gravity="left|center"
+            android:text="Shayari 2023"
+            android:textColor="#AEF9FE"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/catshayari"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

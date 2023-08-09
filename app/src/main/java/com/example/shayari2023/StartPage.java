@@ -26,7 +26,7 @@ public class StartPage extends AppCompatActivity {
         ConstraintLayout startpage = findViewById(R.id.startpage);
 
         AnimationDrawable animationDrawable = (AnimationDrawable) startpage.getBackground();
-        animationDrawable.setEnterFadeDuration(1500);
+        animationDrawable.setEnterFadeDuration(500);
         animationDrawable.setExitFadeDuration(3500);
         animationDrawable.start();
 

@@ -28,5 +28,7 @@ public class ViewShayari extends AppCompatActivity {
         MyPagerAdapter myPagerAdapter = new MyPagerAdapter(shayaries[catposition], ViewShayari.this);
 
         viewPager.setAdapter(myPagerAdapter);
+
+        viewPager.setCurrentItem(itemposition);
     }
 }

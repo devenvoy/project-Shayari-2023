@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/mashbg"
     android:orientation="vertical"
     tools:context=".CatItems">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="?android:actionBarSize"
         android:background="#74A4FD">
 
         <ImageView
@@ -22,28 +22,30 @@
 
         <TextView
             android:id="@+id/Catitemtxt"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/backbtns"
             android:fontFamily="@font/artifexcf_book"
-            android:gravity="left|center"
+            android:gravity="center"
             android:text="Shayari 2023"
             android:textColor="#AEF9FE"
             android:textSize="30sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+
+
+    </RelativeLayout>
 
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        app:dividerColor="@color/black"/>
+        app:dividerColor="@color/black" />
 
 
     <ListView
         android:id="@+id/catshayari"
-        android:dividerHeight="0dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:dividerHeight="0dp" />
 
 </LinearLayout>

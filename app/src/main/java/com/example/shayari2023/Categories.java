@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Categories extends AppCompatActivity {
 
-    ImageView backbtn;
+    ImageView backbtn , usericon;
     GridView gridview;
     public static int[] CatImgArr = new int[]{
             R.drawable.life,
@@ -352,6 +352,7 @@ public class Categories extends AppCompatActivity {
 
         backbtn = findViewById(R.id.backbtn);
         gridview = findViewById(R.id.categoryList);
+        usericon = findViewById(R.id.usericon);
 
         backbtn.setOnClickListener(v -> finish());
         CustomCatAdapter adapter = new CustomCatAdapter(this, R.layout.catitems, catarray);

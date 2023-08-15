@@ -13,7 +13,7 @@ public class loginpage extends AppCompatActivity {
 
     Button loginbtn;
     ImageView exit;
-    TextView newreg;
+    TextView newreg, guestlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class loginpage extends AppCompatActivity {
         loginbtn =findViewById(R.id.login_btn);
         exit =findViewById(R.id.exit);
         newreg =findViewById(R.id.newuser);
+        guestlogin =findViewById(R.id.guestlogin);
 
         Intent ils = new Intent(getApplicationContext(),Categories.class);
         Intent ig = new Intent(getApplicationContext(),Categories.class);
@@ -40,6 +41,12 @@ public class loginpage extends AppCompatActivity {
 
         newreg.setOnClickListener( v -> {
             startActivity(inr); finish();
+        });
+
+        guestlogin.setOnClickListener( v -> {
+            ig.putExtra("codeguest","guest");
+            startActivity(ig);
+            finish();
         });
 
 

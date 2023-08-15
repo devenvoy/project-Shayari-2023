@@ -32,7 +32,7 @@ public class StartPage extends AppCompatActivity {
 
         btnStart = findViewById(R.id.btnStart);
 
-        Intent i1 = new Intent(this, Categories.class);
+        Intent i1 = new Intent(this, loginpage.class);
 
         btnStart.setOnClickListener(v -> {
             startActivity(i1);

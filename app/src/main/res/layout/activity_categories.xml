@@ -48,7 +48,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/life" />
+                android:src="@drawable/usericondp2" />
 
 
         </androidx.cardview.widget.CardView>

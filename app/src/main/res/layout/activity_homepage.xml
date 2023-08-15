@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/romanticshayari" />
+            android:src="@drawable/usericondp2" />
 
 
     </androidx.cardview.widget.CardView>
@@ -43,25 +43,95 @@
         app:cardCornerRadius="70dp">
 
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:text="Hello, Devansh"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/playfairdisplay_variablefont_wght"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"
-            android:gravity="center_vertical"
-            android:textColor="@color/black"/>
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/playfairdisplay_variablefont_wght"
+                android:gravity="center_vertical"
+                android:text="Hello,\nDevansh Amdavadwala"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="100dp"
+                android:text="Phone no."
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="120dp"
+                android:text="9429509806"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="170dp"
+                android:text="Email"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="190dp"
+                android:text="devanshamdavadwala@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="250dp"
+                android:background="@drawable/bg_login_btn"
+                android:text="Change Details"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="330dp"
+                android:background="@drawable/bg_login_btn"
+                android:text="Change Image"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
 
 
     </androidx.cardview.widget.CardView>
 
     <ImageView
+        android:id="@+id/backbtn"
         android:layout_width="50dp"
-        android:layout_marginTop="10dp"
         android:layout_height="40dp"
+        android:layout_marginTop="10dp"
         android:padding="4dp"
         android:src="@drawable/baseline_arrow_back_24" />
 

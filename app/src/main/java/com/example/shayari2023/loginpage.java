@@ -2,25 +2,47 @@ package com.example.shayari2023;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.basgeekball.awesomevalidation.AwesomeValidation;
-import com.basgeekball.awesomevalidation.ValidationStyle;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 
 public class loginpage extends AppCompatActivity {
 
-    private AwesomeValidation awesomeValidation;
+    Button loginbtn;
+    ImageView exit;
+    TextView newreg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginpage);
 
-        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        loginbtn =findViewById(R.id.login_btn);
+        exit =findViewById(R.id.exit);
+        newreg =findViewById(R.id.newuser);
+
+        Intent ils = new Intent(getApplicationContext(),Categories.class);
+        Intent ig = new Intent(getApplicationContext(),Categories.class);
+        Intent inr = new Intent(getApplicationContext(),newregister.class);
+
+
+        loginbtn.setOnClickListener(v -> {
+            startActivity(ils);
+            finish();
+        });
+
+        exit.setOnClickListener( v -> {
+            finish();
+        });
+
+        newreg.setOnClickListener( v -> {
+            startActivity(inr); finish();
+        });
+
+
 
 
 

@@ -359,11 +359,16 @@ public class Categories extends AppCompatActivity {
         gridview.setAdapter(adapter);
 
         Intent i2 = new Intent(Categories.this, CatItems.class);
+        Intent home = new Intent(Categories.this, Homepage.class);
 
         gridview.setOnItemClickListener((parent, view, position, id) -> {
             i2.putExtra("pos", position);
             showToasting(Categories.this, catarray[position]);
             startActivity(i2);
+        });
+
+        usericon.setOnClickListener( v -> {
+            startActivity(home);
         });
 
 

@@ -1,12 +1,17 @@
 package com.example.shayari2023;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Map;
+import java.util.Set;
 
 
 public class loginpage extends AppCompatActivity {
@@ -14,7 +19,7 @@ public class loginpage extends AppCompatActivity {
     Button loginbtn;
     ImageView exit;
     TextView newreg, guestlogin;
-
+//    public static SharedPreferences sp = new SharedPreferences()
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

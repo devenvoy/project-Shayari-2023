@@ -1,18 +1,14 @@
 package com.example.shayari2023;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class StartPage extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +18,21 @@ public class StartPage extends AppCompatActivity {
         setContentView(R.layout.activity_start);
 
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i1 = new Intent(StartPage.this, loginpage.class);
+        new Handler().postDelayed(() -> {
+            SessionManager sessionManager = new SessionManager(this);
+            boolean status = sessionManager.checkSession();
 
+            if (status) {
+                Intent i1 = new Intent(StartPage.this, Categories.class);
                 startActivity(i1);
                 finish();
-
+            } else {
+                Intent i2 = new Intent(StartPage.this, loginpage.class);
+                startActivity(i2);
+                finish();
             }
-        }, 1500);
 
+        }, 1500);
 
     }
 }

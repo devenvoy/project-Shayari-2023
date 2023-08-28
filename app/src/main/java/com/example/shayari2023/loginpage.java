@@ -41,21 +41,23 @@ public class loginpage extends AppCompatActivity {
 
         loginbtn.setOnClickListener(v -> {
 
-            if (log_email.getText().toString().isEmpty() || log_pass.getText().toString().isEmpty()){
+            if (log_email.getText().toString().isEmpty() || log_pass.getText().toString().isEmpty()) {
                 log_email.setError("Enter details");
                 log_pass.setError("Enter details");
-            }
-            else if (email == log_email.getText().toString()) {
-                if (pass == log_pass.getText().toString()) {
-                    sessionManager.editor.putBoolean("login_status", true);
-                    startActivity(ils);
-                    finish();
-                } else {
-                    log_pass.setText("");
-                    log_pass.setError("Wrong Password");
-                }
             } else {
-                log_email.setError("Wrong Email credentials ");
+                if (email.equals(log_email.getText().toString())) {
+                    if (pass.equals(log_pass.getText().toString())) {
+                        sessionManager.editor.putBoolean("login_status", true);
+                        sessionManager.editor.commit();
+                        startActivity(ils);
+                        finish();
+                    } else {
+                        log_pass.setText("");
+                        log_pass.setError("Wrong Password");
+                    }
+                } else {
+                    log_email.setError("Wrong Email credentials ");
+                }
             }
         });
 

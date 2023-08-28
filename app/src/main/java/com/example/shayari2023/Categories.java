@@ -370,7 +370,6 @@ public class Categories extends AppCompatActivity {
 
         usericon.setOnClickListener( v -> {
             startActivity(home);
-            finish();
         });
 
 

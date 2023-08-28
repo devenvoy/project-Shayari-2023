@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class StartPage extends AppCompatActivity {
 
+    SessionManager sessionManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,16 +21,15 @@ public class StartPage extends AppCompatActivity {
 
 
         new Handler().postDelayed(() -> {
-            SessionManager sessionManager = new SessionManager(this);
+            sessionManager = new SessionManager(this);
+
             boolean status = sessionManager.checkSession();
 
             if (status == true) {
-                Intent i1 = new Intent(StartPage.this, Categories.class);
-                startActivity(i1);
+                startActivity(new Intent(StartPage.this, Categories.class));
                 finish();
             } else {
-                Intent i2 = new Intent(StartPage.this, loginpage.class);
-                startActivity(i2);
+                startActivity(new Intent(StartPage.this, loginpage.class));
                 finish();
             }
 

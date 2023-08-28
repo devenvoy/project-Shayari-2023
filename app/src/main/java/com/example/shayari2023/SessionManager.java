@@ -42,7 +42,7 @@ public class SessionManager {
     }
 
     public String getSession(String key) {
-        String value = sp.getString(key, null);
+        String value = sp.getString(key, "");
         return value;
     }
 
@@ -57,10 +57,6 @@ public class SessionManager {
 
         editor.putBoolean("login_status",false);
         editor.commit();
-
-        Intent newl = new Intent(context, loginpage.class);
-        context.startActivity(newl);
     }
-
 
 }

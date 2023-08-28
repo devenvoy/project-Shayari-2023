@@ -35,13 +35,13 @@ public class Homepage extends AppCompatActivity {
         phone.setText(sessionManager.getSession("phone_key"));
 
         backbtn.setOnClickListener( v -> {
-            startActivity(new Intent(Homepage.this , Categories.class));
             finish();
         });
     }
 
     public void logout(View view) {
         sessionManager.logoutSession();
+        startActivity(new Intent(Homepage.this , loginpage.class));
         finish();
     }
 }

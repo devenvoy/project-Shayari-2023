@@ -22,8 +22,9 @@ public class SessionManager {
     }
 
     public boolean checkSession() {
+
         // if user created account it will be true else false
-        if (sp.contains("login_status")) {
+        if (sp.getBoolean("login_status",false)==true) {
             return true;
         }
         return false;
@@ -35,14 +36,11 @@ public class SessionManager {
         editor.putString("phone_key", phono);
         editor.putString("pass_key", pass);
         // if it storing means user has active logins
-        setStatus(false);
+        editor.putBoolean("login_status", false);
         // without commit data will be not stored in file
         editor.commit();
     }
 
-    public void setStatus(Boolean ss){
-        editor.putBoolean("login_status", ss);
-    }
     public String getSession(String key) {
         String value = sp.getString(key, null);
         return value;
@@ -55,11 +53,14 @@ public class SessionManager {
 
         // clear only selected data
         // this only remove data from key given
-         editor.remove("pass_key");
+//         editor.remove("pass_key");
 
+        editor.putBoolean("login_status",false);
         editor.commit();
 
         Intent newl = new Intent(context, loginpage.class);
         context.startActivity(newl);
     }
+
+
 }

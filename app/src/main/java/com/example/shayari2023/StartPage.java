@@ -22,7 +22,7 @@ public class StartPage extends AppCompatActivity {
             SessionManager sessionManager = new SessionManager(this);
             boolean status = sessionManager.checkSession();
 
-            if (status) {
+            if (status == true) {
                 Intent i1 = new Intent(StartPage.this, Categories.class);
                 startActivity(i1);
                 finish();

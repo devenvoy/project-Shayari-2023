@@ -2,6 +2,7 @@ package com.example.shayari2023;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class Homepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
+        sessionManager = new SessionManager(getApplicationContext());
 
         backbtn = findViewById(R.id.backbtn);
         change_detail = findViewById(R.id.chg_det);
@@ -28,27 +30,18 @@ public class Homepage extends AppCompatActivity {
         phone = findViewById(R.id.phone);
 
 
-
-        String acc = getIntent().getStringExtra("codeguest");
-
-        if(acc.equals("guest")){
-            name.setText("Hello,\nGuest User");
-            email.setText("-");
-            phone.setText("-");
-            change_detail.setEnabled(false);
-            change_image.setEnabled(false);
-        }
-
-        name.setText(sessionManager.getSession("name_key"));
+        name.setText("hello \n"+sessionManager.getSession("name_key"));
         email.setText(sessionManager.getSession("email_key"));
-        name.setText(sessionManager.getSession("phone_key"));
+        phone.setText(sessionManager.getSession("phone_key"));
 
         backbtn.setOnClickListener( v -> {
+            startActivity(new Intent(Homepage.this , Categories.class));
             finish();
         });
     }
 
     public void logout(View view) {
         sessionManager.logoutSession();
+        finish();
     }
 }

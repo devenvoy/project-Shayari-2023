@@ -354,7 +354,6 @@ public class Categories extends AppCompatActivity {
         gridview = findViewById(R.id.categoryList);
         usericon = findViewById(R.id.usericon);
 
-        String acc = getIntent().getStringExtra("codeguest");
 
         backbtn.setOnClickListener(v -> finish());
         CustomCatAdapter adapter = new CustomCatAdapter(this, R.layout.catitems, catarray);
@@ -370,8 +369,8 @@ public class Categories extends AppCompatActivity {
         });
 
         usericon.setOnClickListener( v -> {
-            home.putExtra("codeguest",acc);
             startActivity(home);
+            finish();
         });
 
 

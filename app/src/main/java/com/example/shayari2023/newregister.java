@@ -23,6 +23,7 @@ public class newregister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newregister);
 
+        sessionManager = new SessionManager(getApplicationContext());
         exit = findViewById(R.id.backbtn);
         logintxt = findViewById(R.id.logintxt);
         signup = findViewById(R.id.signup);

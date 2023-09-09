@@ -12,6 +12,8 @@ public class StartPage extends AppCompatActivity {
 
     SessionManager sessionManager;
 
+    Handler handler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +22,9 @@ public class StartPage extends AppCompatActivity {
         setContentView(R.layout.activity_start);
 
 
-        new Handler().postDelayed(() -> {
+        handler = new Handler();
+        handler.removeCallbacksAndMessages(null);
+        handler.postDelayed(() -> {
             sessionManager = new SessionManager(this);
 
             boolean status = sessionManager.checkSession();

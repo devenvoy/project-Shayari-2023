@@ -13,8 +13,14 @@ public class Homepage extends AppCompatActivity {
 
     SessionManager sessionManager;
     ImageView backbtn;
-    Button change_detail , change_image;
     TextView name , email ,phone;
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Homepage.this ,Categories.class));
+        finish();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +29,6 @@ public class Homepage extends AppCompatActivity {
         sessionManager = new SessionManager(getApplicationContext());
 
         backbtn = findViewById(R.id.backbtn);
-        change_detail = findViewById(R.id.chg_det);
-        change_image = findViewById(R.id.chg_img);
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);
         phone = findViewById(R.id.phone);
@@ -35,6 +39,7 @@ public class Homepage extends AppCompatActivity {
         phone.setText(sessionManager.getSession("phone_key"));
 
         backbtn.setOnClickListener( v -> {
+            startActivity(new Intent(Homepage.this ,Categories.class));
             finish();
         });
     }

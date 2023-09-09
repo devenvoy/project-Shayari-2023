@@ -1,17 +1,20 @@
 package com.example.shayari2023;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Categories extends AppCompatActivity {
 
-    ImageView backbtn , usericon;
+    ImageView backbtn, usericon;
     GridView gridview;
     public static int[] CatImgArr = new int[]{
             R.drawable.life,
@@ -346,6 +349,11 @@ public class Categories extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        showalert();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
@@ -355,7 +363,10 @@ public class Categories extends AppCompatActivity {
         usericon = findViewById(R.id.usericon);
 
 
-        backbtn.setOnClickListener(v -> finish());
+        backbtn.setOnClickListener(v -> {
+            showalert();
+        });
+
         CustomCatAdapter adapter = new CustomCatAdapter(this, R.layout.catitems, catarray);
         gridview.setAdapter(adapter);
 
@@ -368,10 +379,37 @@ public class Categories extends AppCompatActivity {
             startActivity(i2);
         });
 
-        usericon.setOnClickListener( v -> {
+        usericon.setOnClickListener(v -> {
             startActivity(home);
+            finish();
         });
 
 
+    }
+
+    private void showalert() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Categories.this);
+        alertDialog.setTitle(Html.fromHtml("<font color='#651FFF'>Exit</font>"));
+        alertDialog.setMessage("Do you want to exit app?");
+        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finishAffinity();
+            }
+        });
+
+        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alert = alertDialog.create();
+        alert.setOnShowListener(arg0 -> {
+            alert.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.ElectricPurple));
+            alert.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.black));
+        });
+        alert.show();
     }
 }

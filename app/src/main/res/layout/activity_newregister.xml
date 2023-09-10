@@ -59,6 +59,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="#302B63"
                 app:errorEnabled="true"
+                app:helperTextTextColor="@android:color/holo_red_light"
                 app:hintTextColor="#302B63">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -85,6 +86,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="#302B63"
                 app:errorEnabled="true"
+                app:helperTextTextColor="@android:color/holo_red_light"
                 app:hintTextColor="#302B63">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -98,10 +100,10 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emaillay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email Address"
-                android:id="@+id/emaillay"
                 android:textColorHint="#302B63"
                 app:boxBackgroundColor="#4D626970"
                 app:boxBackgroundMode="outline"
@@ -143,7 +145,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="#302B63"
                 app:errorEnabled="true"
-                app:helperTextTextColor="#74a4fd"
+                app:helperTextTextColor="@android:color/holo_red_light"
                 app:hintTextColor="#302B63">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -171,7 +173,7 @@
                 app:counterMaxLength="16"
                 app:errorEnabled="true"
                 app:helperText="Enter Strong Password"
-                app:helperTextTextColor="#74a4fd"
+                app:helperTextTextColor="@android:color/holo_red_light"
                 app:hintTextColor="#302B63"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#302B63">
@@ -181,6 +183,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPassword"
+                    android:maxLength="16"
                     android:textColor="#B3000000" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -202,8 +205,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="16"
                 app:errorEnabled="true"
-                app:helperText="Enter Strong Password"
-                app:helperTextTextColor="#74a4fd"
+                app:helperTextTextColor="@android:color/holo_red_light"
                 app:hintTextColor="#302B63"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#302B63">
@@ -212,6 +214,7 @@
                     android:id="@+id/reg_cpassword"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:maxLength="16"
                     android:inputType="textPassword"
                     android:textColor="#B3000000" />
 

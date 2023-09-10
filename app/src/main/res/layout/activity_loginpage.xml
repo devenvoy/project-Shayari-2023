@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ocean_breeze" >
+        android:background="@drawable/ocean_breeze">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,8 +54,8 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
-            android:gravity="center"
             android:drawableStart="@drawable/_add"
+            android:gravity="center"
             android:text=" Sign Up"
             android:textColor="@color/white"
             android:textSize="15sp"
@@ -77,200 +77,199 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="28dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Welcome"
-                android:textColor="#302B63"
-                android:textSize="32sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:alpha="0.7"
-                android:text="Please login with your information"
-                android:textColor="@color/black" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email Address"
-                android:textColorHint="#302B63"
-                app:boxBackgroundColor="#4D626970"
-                app:boxBackgroundMode="outline"
-                android:id="@+id/log_emaillay"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxStrokeColor="@drawable/text_input_outline"
-                app:boxStrokeWidthFocused="3dp"
-                app:endIconMode="clear_text"
-                app:endIconTint="#302B63"
-                app:errorEnabled="true"
-                app:helperTextTextColor="@color/black"
-                app:hintTextColor="#302B63"
-                app:placeholderText="ex: abc@cdf.com"
-                app:placeholderTextColor="#80000000">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/log_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="textWebEmailAddress"
-                    android:textColor="#B3000000" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="10dp" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="password"
-                android:textColorHint="#302B63"
-                app:boxBackgroundColor="#4D626970"
-                android:id="@+id/log_passlay"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxStrokeColor="@drawable/text_input_outline"
-                app:boxStrokeWidthFocused="3dp"
-                app:counterEnabled="true"
-                app:counterMaxLength="16"
-                app:errorEnabled="true"
-                app:helperTextTextColor="#00A8CC"
-                app:hintTextColor="#302B63"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#302B63">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/log_pass"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="textPassword"
-                    android:textColor="#B3000000" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="30dp">
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:alpha="0.7"
-                    android:text="Remember me"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:text="I forgot my password"
-                    android:textColor="@color/black" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="10dp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/login_btn"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/bg_login_btn"
-                android:gravity="center"
-                android:text="Sign In"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="10dp" />
-
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/guestlogin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="30dp"
-                    android:alpha="0.7"
-                    android:text="Guest Login "
-                    android:textColor="@color/black" />
+                android:orientation="vertical"
+                android:padding="28dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Or Login with"
+                    android:text="Welcome"
                     android:textColor="#302B63"
+                    android:textSize="32sp"
                     android:textStyle="bold" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:text="Please login with your information"
+                    android:textColor="@color/black" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/log_emaillay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email Address"
+                    android:textColorHint="#302B63"
+                    app:boxBackgroundColor="#4D626970"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomStart="15dp"
+                    app:boxCornerRadiusTopEnd="15dp"
+                    app:boxStrokeColor="@drawable/text_input_outline"
+                    app:boxStrokeWidthFocused="3dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="#302B63"
+                    app:errorEnabled="true"
+                    app:helperTextTextColor="@android:color/holo_red_light"
+                    app:hintTextColor="#302B63"
+                    app:placeholderText="ex: abc@cdf.com"
+                    app:placeholderTextColor="#80000000">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/log_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textWebEmailAddress"
+                        android:textColor="#B3000000" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/log_passlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="password"
+                    android:textColorHint="#302B63"
+                    app:boxBackgroundColor="#4D626970"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomStart="15dp"
+                    app:boxCornerRadiusTopEnd="15dp"
+                    app:boxStrokeColor="@drawable/text_input_outline"
+                    app:boxStrokeWidthFocused="3dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="16"
+                    app:errorEnabled="true"
+                    app:helperTextTextColor="@android:color/holo_red_light"
+                    app:hintTextColor="#302B63"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#302B63">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/log_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textPassword"
+                        android:textColor="#B3000000" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:alpha="0.7"
+                        android:text="Remember me"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="I forgot my password"
+                        android:textColor="@color/black" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/login_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/bg_login_btn"
+                    android:gravity="center"
+                    android:text="Sign In"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Or Login with"
+                        android:textColor="#302B63"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/facebook_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/facebook" />
+
+                    <ImageView
+                        android:id="@+id/github_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/github" />
+
+                    <ImageView
+                        android:id="@+id/google_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/google" />
+
+                    <ImageView
+                        android:id="@+id/guestlogin"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/guest" />
+
+
+                </LinearLayout>
+
 
             </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/facebook_btn"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:background="@drawable/facebook" />
-
-                <ImageView
-                    android:id="@+id/github_btn"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:src="@drawable/github" />
-
-                <ImageView
-                    android:id="@+id/google_btn"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:background="@drawable/google" />
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
 
         </ScrollView>
 

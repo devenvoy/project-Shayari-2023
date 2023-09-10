@@ -17,8 +17,8 @@
             android:id="@+id/backbtns"
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:padding="6dp"
-            android:src="@drawable/arrow_left" />
+            android:padding="10dp"
+            android:src="@drawable/baseline_arrow_back_24" />
 
         <TextView
             android:id="@+id/Catitemtxt"
@@ -27,11 +27,10 @@
             android:layout_toRightOf="@+id/backbtns"
             android:fontFamily="@font/artifexcf_book"
             android:gravity="center"
-            android:text="Shayari 2023"
-            android:textColor="#AEF9FE"
+            android:text="Shayari "
+            android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
-
 
 
     </RelativeLayout>

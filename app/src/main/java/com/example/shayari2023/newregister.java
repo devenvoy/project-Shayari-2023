@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.regex.Pattern;
+
 public class newregister extends AppCompatActivity {
 
     SessionManager sessionManager;
@@ -20,7 +22,7 @@ public class newregister extends AppCompatActivity {
     TextView logintxt;
     Button signup;
     Boolean canLogin;
-    TextInputLayout passlay, cpasslay;
+    TextInputLayout passlay, cpasslay, emaillay;
     EditText reg_fname, reg_lname, reg_email, reg_phone, reg_password, reg_cpassword;
 
     @Override
@@ -46,6 +48,7 @@ public class newregister extends AppCompatActivity {
         reg_cpassword = findViewById(R.id.reg_cpassword);
         passlay = findViewById(R.id.passlay);
         cpasslay = findViewById(R.id.cpasslay);
+        emaillay = findViewById(R.id.emaillay);
 
 
         Intent ihl = new Intent(getApplicationContext(), loginpage.class);
@@ -60,6 +63,29 @@ public class newregister extends AppCompatActivity {
             startActivity(ihl);
             finish();
         });
+
+        reg_email.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String EMAIL_REGEX = "^[a-z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-z.-]+$";
+                Pattern pattern = Pattern.compile(EMAIL_REGEX);
+                String email = reg_email.getText().toString();
+                if (!pattern.matcher(email).matches()) {
+                    emaillay.setError("Invalid email");
+                } else {
+                    emaillay.setError("");
+                }
+            }
+        });
+
 
         reg_password.addTextChangedListener(new TextWatcher() {
             @Override
@@ -89,9 +115,7 @@ public class newregister extends AppCompatActivity {
         });
 
 
-        signup.setOnClickListener(v ->
-
-        {
+        signup.setOnClickListener(v -> {
             String fname = reg_fname.getText().toString();
             String lname = reg_lname.getText().toString();
             String fullname = fname + " " + lname;
@@ -100,14 +124,21 @@ public class newregister extends AppCompatActivity {
             String pass = reg_password.getText().toString();
             String cpass = reg_cpassword.getText().toString();
 
-
-            if (pass.equals(cpass)) {
-                sessionManager.createSession(fullname, email, phono, pass);
-                startActivity(ihl);
-                finish();
+            if (fullname.isEmpty()) {
+                reg_fname.setError("Fill this field");
+                reg_lname.setError("Fill this field");
+            } else if (email.isEmpty()) {
+                reg_email.setError("Fill this field");
+            } else if (phono.isEmpty()) {
+                reg_phone.setError("Fill this field");
             } else {
-                reg_cpassword.setText("");
-                reg_cpassword.setError("Password did not match");
+                if (pass.equals(cpass)) {
+                    sessionManager.createSession(fullname, email, phono, pass);
+                    startActivity(ihl);
+                    finish();
+                } else {
+                    cpasslay.setError("Password did not match");
+                }
             }
         });
     }

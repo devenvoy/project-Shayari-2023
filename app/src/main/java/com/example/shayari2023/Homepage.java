@@ -1,23 +1,22 @@
 package com.example.shayari2023;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Homepage extends AppCompatActivity {
 
     SessionManager sessionManager;
     ImageView backbtn;
-    TextView name , email ,phone;
+    TextView name, email, phone;
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(Homepage.this ,Categories.class));
+        startActivity(new Intent(Homepage.this, Categories.class));
         finish();
     }
 
@@ -34,19 +33,20 @@ public class Homepage extends AppCompatActivity {
         phone = findViewById(R.id.phone);
 
 
-        name.setText("hello \n"+sessionManager.getSession("name_key"));
+        name.setText(sessionManager.getSession("name_key"));
         email.setText(sessionManager.getSession("email_key"));
         phone.setText(sessionManager.getSession("phone_key"));
 
-        backbtn.setOnClickListener( v -> {
-            startActivity(new Intent(Homepage.this ,Categories.class));
+
+        backbtn.setOnClickListener(v -> {
+            startActivity(new Intent(Homepage.this, Categories.class));
             finish();
         });
     }
 
     public void logout(View view) {
         sessionManager.logoutSession();
-        startActivity(new Intent(Homepage.this , loginpage.class));
+        startActivity(new Intent(Homepage.this, loginpage.class));
         finish();
     }
 }

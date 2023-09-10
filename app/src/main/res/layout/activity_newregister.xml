@@ -101,6 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email Address"
+                android:id="@+id/emaillay"
                 android:textColorHint="#302B63"
                 app:boxBackgroundColor="#4D626970"
                 app:boxBackgroundMode="outline"

@@ -45,61 +45,74 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="30dp">
 
+
+            <TextView
+                android:id="@+id/hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/playfairdisplay_variablefont_wght"
+                android:gravity="center_vertical"
+                android:text="hello ,"
+                android:textColor="#302B63"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hello"
                 android:fontFamily="@font/playfairdisplay_variablefont_wght"
                 android:gravity="center_vertical"
-                android:text="Hello,\nDevansh Amdavadwala"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/pph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="100dp"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="20dp"
                 android:text="Phone no."
-                android:textColor="@color/black" />
+                android:textColor="#302B63"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="120dp"
-                android:text="9429509806"
+                android:layout_below="@+id/pph"
+                android:layout_marginTop="10dp"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/eeh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="170dp"
+                android:layout_below="@+id/phone"
+                android:layout_marginTop="20dp"
                 android:text="Email"
-                android:textColor="@color/black" />
+                android:textColor="#302B63"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="190dp"
-                android:text="devanshamdavadwala@gmail.com"
+                android:layout_below="@+id/eeh"
+                android:layout_marginTop="10dp"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-
 
 
         </RelativeLayout>
@@ -117,13 +130,13 @@
         android:src="@drawable/baseline_arrow_back_24" />
 
     <ImageView
-        android:layout_margin="10dp"
-        android:src="@drawable/baseline_logout_24"
-        android:padding="5dp"
-        android:onClick="logout"
-        android:layout_alignParentRight="true"
         android:layout_width="50dp"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:onClick="logout"
+        android:padding="5dp"
+        android:src="@drawable/baseline_logout_24" />
 
 
 </RelativeLayout>

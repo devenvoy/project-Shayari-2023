@@ -2,12 +2,19 @@ package com.example.shayari2023;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.regex.Pattern;
 
 
 public class loginpage extends AppCompatActivity {
@@ -16,7 +23,7 @@ public class loginpage extends AppCompatActivity {
     Button loginbtn;
     ImageView exit;
     TextView newreg, guestlogin;
-
+    TextInputLayout log_emailay , log_passlay;
     EditText log_email, log_pass;
 
     @Override
@@ -30,6 +37,8 @@ public class loginpage extends AppCompatActivity {
         newreg = findViewById(R.id.newuser);
         log_email = findViewById(R.id.log_email);
         log_pass = findViewById(R.id.log_pass);
+        log_emailay = findViewById(R.id.log_emaillay);
+        log_passlay = findViewById(R.id.log_passlay);
         guestlogin = findViewById(R.id.guestlogin);
 
         Intent ils = new Intent(getApplicationContext(), Categories.class);
@@ -39,11 +48,34 @@ public class loginpage extends AppCompatActivity {
         String email = sessionManager.getSession("email_key");
         String pass = sessionManager.getSession("pass_key");
 
+        log_email.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String EMAIL_REGEX = "^[a-z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-z.-]+$";
+                Pattern pattern = Pattern.compile(EMAIL_REGEX);
+                String email = log_email.getText().toString();
+                if (!pattern.matcher(email).matches()) {
+                    log_emailay.setError("Invalid email");
+                } else {
+                    log_emailay.setError("");
+                }
+            }
+        });
+
+
         loginbtn.setOnClickListener(v -> {
 
             if (log_email.getText().toString().isEmpty() || log_pass.getText().toString().isEmpty()) {
-                log_email.setError("Enter details");
-                log_pass.setError("Enter details");
+                log_emailay.setError("Enter details");
+                log_passlay.setError("Enter details");
             } else {
                 if (email.equals(log_email.getText().toString())) {
                     if (pass.equals(log_pass.getText().toString())) {
@@ -52,11 +84,13 @@ public class loginpage extends AppCompatActivity {
                         startActivity(ils);
                         finish();
                     } else {
-                        log_pass.setText("");
-                        log_pass.setError("Wrong Password");
+                        log_passlay.setError("Wrong Password");
                     }
                 } else {
-                    log_email.setError("Wrong Email credentials ");
+                    log_email.setText("");
+                    log_pass.setText("");
+                    log_emailay.setError("Invalid Login credentials ");
+                    Toast.makeText(loginpage.this, "Enter correct Email And Password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -71,7 +105,7 @@ public class loginpage extends AppCompatActivity {
         });
 
         guestlogin.setOnClickListener(v -> {
-            ig.putExtra("codeguest", "guest");
+            sessionManager.createSession("User", "", "","");
             startActivity(ig);
             finish();
         });

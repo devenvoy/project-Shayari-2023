@@ -5,16 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Homepage">
-
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
         android:src="@drawable/ocean_breeze" />
-
-
     <androidx.cardview.widget.CardView
         android:layout_width="120dp"
         android:layout_height="120dp"
@@ -22,33 +18,23 @@
         android:layout_marginTop="80dp"
         android:elevation="5dp"
         app:cardCornerRadius="60dp">
-
-
         <ImageView
             android:id="@+id/profilepic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/usericondp2" />
-
-
     </androidx.cardview.widget.CardView>
-
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="-100dp"
         app:cardCornerRadius="70dp">
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="30dp">
-
-
             <TextView
                 android:id="@+id/hello"
                 android:layout_width="match_parent"
@@ -71,7 +57,6 @@
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/pph"
                 android:layout_width="wrap_content"
@@ -81,7 +66,6 @@
                 android:text="Phone no."
                 android:textColor="#302B63"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/phone"
                 android:layout_width="wrap_content"
@@ -92,7 +76,6 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/eeh"
                 android:layout_width="wrap_content"
@@ -102,7 +85,6 @@
                 android:text="Email"
                 android:textColor="#302B63"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
@@ -113,14 +95,8 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
-
-
     <ImageView
         android:id="@+id/backbtn"
         android:layout_width="50dp"
@@ -128,7 +104,6 @@
         android:layout_margin="10dp"
         android:padding="4dp"
         android:src="@drawable/baseline_arrow_back_24" />
-
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -137,6 +112,4 @@
         android:onClick="logout"
         android:padding="5dp"
         android:src="@drawable/baseline_logout_24" />
-
-
 </RelativeLayout>

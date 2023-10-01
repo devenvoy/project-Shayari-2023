@@ -7,19 +7,16 @@
     android:background="@drawable/mashbg"
     android:orientation="vertical"
     tools:context=".Categories">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
         android:background="#74A4FD">
-
         <ImageView
             android:id="@+id/backbtn"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:src="@drawable/baseline_arrow_back_24" />
-
         <TextView
             android:id="@+id/abcd"
             android:layout_width="250dp"
@@ -32,7 +29,6 @@
             android:textColor="#302B63"
             android:textSize="30sp"
             android:textStyle="bold" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/roundCardView"
             android:layout_width="45dp"
@@ -42,30 +38,21 @@
             android:layout_toRightOf="@id/abcd"
             android:elevation="0dp"
             app:cardCornerRadius="22.5dp">
-
             <ImageView
                 android:id="@+id/usericon"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/usericondp2" />
-
-
         </androidx.cardview.widget.CardView>
-
-
     </RelativeLayout>
-
-
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
         android:layout_height="3dp"
         app:dividerColor="@color/black" />
-
     <GridView
         android:id="@+id/categoryList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="2" />
-
 </LinearLayout>

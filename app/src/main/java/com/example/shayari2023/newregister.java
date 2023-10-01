@@ -1,8 +1,6 @@
 package com.example.shayari2023;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -10,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -82,10 +79,9 @@ public class newregister extends AppCompatActivity {
                 Pattern pattern = Pattern.compile(EMAIL_REGEX);
                 String email = reg_email.getText().toString();
                 if (!pattern.matcher(email).matches()) {
-                    emaillay.setHelperText("Invalid email");
+                    emaillay.setError("Invalid email");
                 } else {
-                    canLogin = true;
-                    emaillay.setHelperText("");
+                    emaillay.setError("");
                 }
             }
         });
@@ -106,13 +102,13 @@ public class newregister extends AppCompatActivity {
                 String errorMessage = errorMsg(input);
 
                 if (errorMessage.equals("Field Empty")) {
-                    passlay.setHelperText("Enter Valid Password");
+                    passlay.setError("Enter Valid Password");
                 } else {
                     passlay.setHelperText(errorMessage);
                 }
 
                 if (errorMessage.equals("Strong Password")) {
-                    passlay.setHelperTextColor(ColorStateList.valueOf(getResources().getColor(R.color.LimeGreenNeon)));
+                    passlay.setError(null);
                     canLogin = true;
                 }
             }
@@ -128,51 +124,21 @@ public class newregister extends AppCompatActivity {
             String pass = reg_password.getText().toString();
             String cpass = reg_cpassword.getText().toString();
 
-            if (fname.isEmpty()) {
+            if (fullname.isEmpty()) {
                 reg_fname.setError("Fill this field");
-                canLogin = false;
-            } else {
-                canLogin = true;
-            }
-
-            if (lname.isEmpty()) {
                 reg_lname.setError("Fill this field");
-                canLogin = false;
-            } else {
-                canLogin = true;
-            }
-
-            if (email.isEmpty()) {
+            } else if (email.isEmpty()) {
                 reg_email.setError("Fill this field");
-                canLogin = false;
-            } else {
-                canLogin = true;
-            }
-
-            if (phono.isEmpty()) {
+            } else if (phono.isEmpty()) {
                 reg_phone.setError("Fill this field");
-                canLogin = false;
             } else {
-                canLogin = true;
-            }
-            if (pass.isEmpty()) {
-                reg_password.setError("Fill this Field");
-                passlay.setHelperText("Enter Password");
-                canLogin = false;
-            } else {
-                canLogin = true;
-            }
-
-            if (canLogin == true) {
                 if (pass.equals(cpass)) {
                     sessionManager.createSession(fullname, email, phono, pass);
                     startActivity(ihl);
                     finish();
                 } else {
-                    cpasslay.setHelperText("Password did not match");
+                    cpasslay.setError("Password did not match");
                 }
-            } else {
-                Toast.makeText(newregister.this, "Fill form correctly", Toast.LENGTH_SHORT).show();
             }
         });
     }

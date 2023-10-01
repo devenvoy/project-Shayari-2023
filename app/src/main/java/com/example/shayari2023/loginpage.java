@@ -21,9 +21,9 @@ public class loginpage extends AppCompatActivity {
 
     SessionManager sessionManager;
     Button loginbtn;
-    ImageView exit, guestlogin;
-    TextView newreg;
-    TextInputLayout log_emailay, log_passlay;
+    ImageView exit;
+    TextView newreg, guestlogin;
+    TextInputLayout log_emailay , log_passlay;
     EditText log_email, log_pass;
 
     @Override
@@ -63,9 +63,9 @@ public class loginpage extends AppCompatActivity {
                 Pattern pattern = Pattern.compile(EMAIL_REGEX);
                 String email = log_email.getText().toString();
                 if (!pattern.matcher(email).matches()) {
-                    log_emailay.setHelperText("Invalid email");
+                    log_emailay.setError("Invalid email");
                 } else {
-                    log_emailay.setHelperText("");
+                    log_emailay.setError("");
                 }
             }
         });
@@ -74,8 +74,8 @@ public class loginpage extends AppCompatActivity {
         loginbtn.setOnClickListener(v -> {
 
             if (log_email.getText().toString().isEmpty() || log_pass.getText().toString().isEmpty()) {
-                log_emailay.setHelperText("Enter details");
-                log_passlay.setHelperText("Enter details");
+                log_emailay.setError("Enter details");
+                log_passlay.setError("Enter details");
             } else {
                 if (email.equals(log_email.getText().toString())) {
                     if (pass.equals(log_pass.getText().toString())) {
@@ -105,8 +105,7 @@ public class loginpage extends AppCompatActivity {
         });
 
         guestlogin.setOnClickListener(v -> {
-            sessionManager.createSession("User", "", "", "");
-            ig.putExtra("guestcode","guest");
+            sessionManager.createSession("User", "", "","");
             startActivity(ig);
             finish();
         });

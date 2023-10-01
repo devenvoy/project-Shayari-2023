@@ -362,11 +362,7 @@ public class Categories extends AppCompatActivity {
         gridview = findViewById(R.id.categoryList);
         usericon = findViewById(R.id.usericon);
 
-//        String cg = "";
-//        cg = getIntent().getStringExtra("codeguest");
-//        if (cg.equals("guest")) {
-//            usericon.setBackgroundResource(R.drawable.guest);
-//        }
+        String cg = getIntent().getStringExtra("codeguest");
 
         backbtn.setOnClickListener(v -> {
             showalert();

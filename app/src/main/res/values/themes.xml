@@ -3,7 +3,7 @@
     <style name="Base.Theme.Shayari2023" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="android:colorPrimaryDark">#74a4fd</item>
-        <item name="colorPrimary">#302B63</item>
+        <item name="colorPrimary">#00000000</item>
     </style>
 
     <style name="Theme.Shayari2023" parent="Base.Theme.Shayari2023" />
